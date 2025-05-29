@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feira Senai</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav>
+    <a href="index.html"><img src="img/logo.png" alt="Logo" /></a>
+    <ul>
+      <li><a href="index.html">Ínicio</a></li>
+      <li><a href="palestra.html">Palestra</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="camada2.html">Contato</a></li>
+      <li><a href="camada2.html">Mapa</a></li>
+    </ul>
+  </nav>
+
+  <div class="grid-container">
+    <div class="plane">
+      <div class="grid"></div>
+      <div class="glow"></div>
+    </div>
+    <div class="plane">
+      <div class="grid"></div>
+      <div class="glow"></div>
+    </div>
+  </div>
+
+  <h1>Feira de Tecnologia</h1>
+  <script>
+    // Animação de transição ao rolar
+    let hasScrolled = false;
+
+    window.addEventListener("wheel", function (event) {
+        if (!hasScrolled && event.deltaY > 0) {
+        hasScrolled = true;
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+            window.location.href = "camada2.html";
+        }, 800); // tempo igual ao transition do CSS
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+      <nav>
+    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="palestra.html">Palestra</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="">Contato</a></li>
+      <li><a href="">Mapa</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+        <div class="bloco-transparente">
+        <div class="conteudo">
+            <img src="img/feira.png" alt="Feira Tecnológica">
+            <div class="texto">
+                <p>
+                    <strong>🌐 Feira Tecnológica do SENAI – Paraguaçu Paulista</strong><br><br>
+                    A inovação está chegando a Paraguaçu Paulista! O <strong>SENAI</strong> convida você para a sua grande Feira Tecnológica, um evento que promete transformar ideias em experiências inesquecíveis. A feira acontecerá em um dia <strong>surpresa</strong>, revelado apenas para os cadastrados — reforçando o clima de expectativa e exclusividade!<br><br>
+
+                    🎤 <strong>O que esperar:</strong><br>
+                    - Demonstrações de projetos de tecnologia e automação.<br>
+                    - Experimentos interativos.<br>
+                    - <strong>Palestras com especialistas</strong> da indústria e da educação técnica.<br>
+                    - Oficinas de inovação e programação para todas as idades.<br><br>
+
+                    🌟 Não perca a oportunidade de fazer parte de uma nova geração de criadores, inovadores e solucionadores de problemas! A entrada será gratuita, mediante cadastro.<br><br>
+                </p>
+                <a href="#"><button>Fazer Cadastro</button></a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+  <!-- JS de rolagem para voltar -->
+  <script>
+    let hasScrolled = false;
+    window.addEventListener("wheel", function (event) {
+      if (!hasScrolled && event.deltaY < 0) {
+        hasScrolled = true;
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>

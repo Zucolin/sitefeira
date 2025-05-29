@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  color: green;
+  position: relative;
+	transition: opacity 0.8s ease;
+  	opacity: 1;
+}
+body.fade-out {
+  opacity: 0;
+}
+h1 {
+  font-size: 6rem;
+  filter: drop-shadow(0 0 5px currentColor);
+  position: relative;
+  z-index: 10;
+}
+
+h1::after {
+  content: '';
+  display: inline-block;
+  width: 0.2em;
+  height: 0.7em;
+  background-color: currentColor;
+  margin-left: 0.1em;
+  animation: blink 1s linear infinite forwards;
+  vertical-align: baseline;
+}
+
+.grid-container {
+  --grid: 10rem;
+  width: 100%;
+  height: 100%;
+  position: fixed; /* fixado para não sumir */
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  perspective: 100rem;
+  animation: rotate 100s linear infinite forwards;
+  z-index: 0;
+}
+
+.plane {
+  --dir: 1;
+  width: 300%;
+  height: 150%;
+  min-height: 70rem;
+  position: absolute;
+  bottom: 0;
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateX(85deg);
+}
+
+.plane:last-child {
+  --dir: -1;
+  top: 0;
+  transform-origin: top center;
+  transform: translateX(-50%) rotateX(-85deg);
+}
+
+.plane > * {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.plane > *::before,
+.plane > *::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.plane > *::before {
+  background-image:
+    repeating-linear-gradient(to left, green, green 4px, transparent 4px, transparent var(--grid)),
+    repeating-linear-gradient(to bottom, green, green 4px, transparent 4px, transparent var(--grid));
+  animation: move 1s linear infinite forwards;
+}
+
+.plane > *::after {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 255) var(--grid), rgba(0, 0, 0, 0));
+  z-index: 1;
+  transform: translateZ(1px);
+}
+
+.glow {
+  filter: blur(1rem);
+  z-index: 1;
+  mix-blend-mode: plus-lighter;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(var(--grid) * var(--dir)));
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    visibility: visible;
+  }
+  51%, 100% {
+    visibility: hidden;
+  }
+}
+
+/* Nav */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(90, 89, 89, 0.055);
+  height: 50px;
+  display: flex;
+  align-items:flex-end;
+  padding: 0 4rem;
+  box-sizing: border-box;
+  z-index: 20;
+}
+nav a:hover img {
+  transform: scale(1.1);
+}
+nav img{
+	height: 30px;
+}
+nav a img {
+  height: 30px;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+nav a img:hover {
+  filter: brightness(0.8);
+}
+
+nav ul {
+	margin-top: 100px;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: flex-end; /* agora vão para o canto direito */
+  align-items: center;
+  margin-left: auto; /* empurra o bloco para a direita */
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: green;
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
