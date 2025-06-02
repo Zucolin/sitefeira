@@ -11,9 +11,10 @@ body {
   color: white;
   font-family: 'Share Tech Mono', monospace;
   height: 100vh;
+  overflow-y: auto;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -25,6 +26,7 @@ nav {
   justify-content: space-between;
   padding: 0 2rem;
   z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 nav a img {
@@ -54,27 +56,30 @@ nav ul li a:hover {
   color: lime;
 }
 
-/* CONTEÚDO */
+/* CONTAINER */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding-top: 60px;
+  height: 100%;
+  padding-top: 80px;
 }
 
 .bloco-transparente {
   background-color: rgba(8, 39, 9, 0.507);
   padding: 2rem;
-  border-radius: 15px;
-  text-align: left;
+  border-radius: 10px;
   max-width: 600px;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
-.bloco-transparente h2{
-    color: green;
+
+.bloco-transparente h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -82,31 +87,42 @@ form {
 }
 
 label {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-input, textarea {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  font-family: 'Share Tech Mono', monospace;
+input[type="text"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid limegreen;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  appearance: none;
+}
+
+select option {
+  background-color: #000;
+  color: white;
 }
 
 button {
-  padding: 0.8rem;
   background-color: green;
   color: white;
-  font-size: 1rem;
-  font-family: 'Share Tech Mono', monospace;
+  padding: 0.6rem 1.3rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: rgb(0, 0, 0);
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgb(16, 68, 3);
+  background-color: lime;
+  transform: scale(1.03);
 }

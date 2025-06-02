@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Feira Tecnológica</title>
+  <link rel="stylesheet" href="css/style5.css" />
+</head>
+<body>
+  <nav>
+    <a href="#"><img src="img/logo.png" alt="Logo" /></a>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="palestra.html">Palestra</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="#">Mapa</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Informações de Contato</h2>
+    <p><strong>E-mail:</strong> feira@senai.com.br</p>
+    <p><strong>Telefone:</strong> (18) 99999-9999</p>
+    <p><strong>Endereço:</strong> Rua das Inovações, 123 - Centro<br>
+       Paraguaçu Paulista - SP<br>CEP: 19700-000</p>
+
+    <h2>Formulário de Contato</h2>
+    <form action="contato.php" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="text" name="email" id="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea name="mensagem" id="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
